@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	https://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<!--   <context:annotation-config /> -->
+	
+	<bean 
+		class = "com.springcore.lifecycle.Student" 
+		name = "student1" 
+		init-method = "init" 
+		destroy-method = "destroy">
+		<property name = "id" value = "sid1" />
+	</bean>
+	
+	<bean 
+		class = "com.springcore.lifecycle.Teacher"
+		name = "teacher1">
+		<property name = "marks" value = "6.4" />	
+	</bean>
+	
+	<bean
+		class = "com.springcore.lifecycle.Subject"
+		name = "subject1">
+		<property name = "name" value = "chemistry" />
+	</bean>
+	
+	<bean class = "org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+		
+	
+</beans>
