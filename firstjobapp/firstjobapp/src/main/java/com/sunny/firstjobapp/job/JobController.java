@@ -10,19 +10,21 @@ import java.util.List;
 public class JobController {
 
     private final JobService jobService;
-    private Long nextId = 1L;
 
     @Autowired
     public JobController(JobService jobService) {
+
         this.jobService = jobService;
     }
+
     @GetMapping("/jobs")
     public ResponseEntity<List<Job>> findAll() {
+
         return ResponseEntity.ok(jobService.findAll());
     }
+
     @PostMapping("/jobs")
     public ResponseEntity<String> createJob(@RequestBody Job job) {
-        job.setId(nextId++);
         jobService.createJob(job);
         return new ResponseEntity<>("Job added successfully!", HttpStatus.CREATED);
     }
