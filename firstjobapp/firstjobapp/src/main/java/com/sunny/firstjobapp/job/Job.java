@@ -1,5 +1,6 @@
 package com.sunny.firstjobapp.job;
 
+import com.sunny.firstjobapp.company.Company;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,6 +14,17 @@ public class Job {
     private Long minSalary;
     private Long maxSalary;
     private String location;
+
+    @ManyToOne
+    private Company company;
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 
     public Job() {
     }

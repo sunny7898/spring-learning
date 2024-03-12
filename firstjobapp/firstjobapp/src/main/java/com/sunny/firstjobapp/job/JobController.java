@@ -13,13 +13,11 @@ public class JobController {
 
     @Autowired
     public JobController(JobService jobService) {
-
         this.jobService = jobService;
     }
 
     @GetMapping("/jobs")
     public ResponseEntity<List<Job>> findAll() {
-
         return ResponseEntity.ok(jobService.findAll());
     }
 
