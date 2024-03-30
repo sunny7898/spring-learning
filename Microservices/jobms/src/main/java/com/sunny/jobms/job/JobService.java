@@ -1,13 +1,13 @@
 package com.sunny.jobms.job;
 
-import com.sunny.jobms.job.dto.JobWithCompanyDTO;
+import com.sunny.jobms.job.dto.JobDTO;
 
 import java.util.List;
 
 public interface JobService {
-    List<JobWithCompanyDTO> findAll();
+    List<JobDTO> findAll();
     void createJob(Job job);
-    Job getJobById(Long id);
+    JobDTO getJobById(Long id);
     boolean deleteJobById(Long id);
     boolean updateJobById(Long id, Job job);
 }
